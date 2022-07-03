@@ -1,1 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$button: #ddd;
+$black: #000;
+
+body, html, #root {
+    margin: 0;
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 1px solid;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.team-container{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.result {
+    margin-left: 15px;
+}
+
+.btn {
+    background-color: $button;
+    border: none;
+    color: $black;
+    padding: 0.625rem 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.25rem 0.125rem;
+    cursor: pointer;
+    &:hover {
+        filter: opacity(0.8);
+    }
+}
