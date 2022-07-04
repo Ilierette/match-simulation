@@ -62,17 +62,17 @@ body, html, #root {
     margin-bottom: 15px;
   }
 
-  .base-timer__circle {
+  .base-timer-circle {
     fill: none;
     stroke: none;
   }
   
-  .base-timer__path-elapsed {
+  .base-timer-path-elapsed {
     stroke-width: 7px;
     stroke: grey;
   }
 
-  .base-timer__label {
+  .base-timer-label {
     position: absolute;
     width: 50px;
     height: 50px;

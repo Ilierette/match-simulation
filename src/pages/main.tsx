@@ -97,12 +97,12 @@ export const MainPage = () => {
     return (
         <div className="container">
             <div className="base-timer">
-                <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <g className="base-timer__circle">
-                        <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                <svg className="base-timer-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g className="base-timer-circle">
+                        <circle className="base-timer-path-elapsed" cx="50" cy="50" r="45" />
                     </g>
                 </svg>
-                <span className="base-timer__label">
+                <span className="base-timer-label">
                     {time ? time : <>0</>}
                 </span>
             </div>
@@ -115,7 +115,7 @@ export const MainPage = () => {
             <div className="team-container">
                 {
                     teams && teams.map((team: TeamProps) => (
-                        <TeamRowContainer team={team} />
+                        <TeamRowContainer team={team} key={team.id}/>
                     ))
                 }
             </div>
