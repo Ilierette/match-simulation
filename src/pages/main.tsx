@@ -1,4 +1,5 @@
 import { TeamRowContainer } from "container/teamRow";
+import { TimerComponent } from "container/timer";
 import React, { useEffect, useState } from "react";
 
 export interface TeamProps {
@@ -82,13 +83,13 @@ export const MainPage = () => {
         }
     }), [time])
 
-    const handleRandom = (list) => {
+    const handleRandom = (list:TeamProps[]) => {
         return list[Math.floor((Math.random() * list.length))]
     }
 
     useEffect((() => {
         if (teams.length) {
-            const temp = teams.map((team) => { return team.teamOneResult + team.teamTwoResult }).reduce((sum, i) => { return sum + i })
+            const temp = teams.map((team:TeamProps) => { return team.teamOneResult + team.teamTwoResult }).reduce((sum, i) => { return sum + i })
             setGoals(temp)
         }
     }), [teams])
@@ -96,17 +97,7 @@ export const MainPage = () => {
 
     return (
         <div className="container">
-            <div className="base-timer">
-                <svg className="base-timer-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <g className="base-timer-circle">
-                        <circle className="base-timer-path-elapsed" cx="50" cy="50" r="45" />
-                    </g>
-                </svg>
-                <span className="base-timer-label">
-                    {time ? time : <>0</>}
-                </span>
-            </div>
-
+            <TimerComponent time={time} />
             {
                 time ? restart ? <button className="btn" onClick={handleTimer}>restart</button> : <button className="btn" onClick={stopTimer}>przerwij</button> :
                     <button className="btn" onClick={handleTimer}>start</button>
@@ -115,7 +106,7 @@ export const MainPage = () => {
             <div className="team-container">
                 {
                     teams && teams.map((team: TeamProps) => (
-                        <TeamRowContainer team={team} key={team.id}/>
+                        <TeamRowContainer team={team} key={team.id} />
                     ))
                 }
             </div>
