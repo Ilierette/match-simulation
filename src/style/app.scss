@@ -5,6 +5,7 @@ $black: #000;
 body, html, #root {
     margin: 0;
     height: 100%;
+    font-family: 'Lato', sans-serif;
 }
 
 #root {
@@ -14,13 +15,14 @@ body, html, #root {
 }
 
 .container {
-    border: 1px solid;
+    border: 1px solid $button;
     padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    box-shadow: 0px 0px 20px 5px $button;
 }
 
 .team-container{
@@ -52,3 +54,31 @@ body, html, #root {
         filter: opacity(0.8);
     }
 }
+
+.base-timer {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 15px;
+  }
+
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+  }
+
+  .base-timer__label {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+  }
